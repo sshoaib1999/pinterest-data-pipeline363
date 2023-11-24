@@ -1,7 +1,4 @@
-# pinterest-data-pipeline363
-
 Milestone 3: Batch Processing - Configure the EC2 Kafka Client
-
 Table of Contents
 Task 1: Create a .pem key file locally
 Task 2: Connect to the EC2 instance
