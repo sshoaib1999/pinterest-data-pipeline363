@@ -1,52 +1,49 @@
-# Milestone 3: Batch Processing - Configure the EC2 Kafka Client
+# Batch Processing - Configure EC2 Kafka Client and Connect MSK to S3
 
-## Table of Contents
-1. [Task 1: Create a .pem key file locally](#task-1-create-a-pem-key-file-locally)
-2. [Task 2: Connect to the EC2 instance](#task-2-connect-to-the-ec2-instance)
-3. [Task 3: Set up Kafka on the EC2 instance](#task-3-set-up-kafka-on-the-ec2-instance)
-4. [Task 4: Create Kafka topics](#task-4-create-kafka-topics)
+## Project Aim
 
-## Task 1: Create a .pem key file locally
-### Step 1:
-- Navigate to Parameter Store in your AWS account.
-- Using your KeyPairId, locate the key pair associated with your EC2 instance.
-- Copy the entire key pair value (including BEGIN and END headers).
-- Paste it into a new file in VSCode with the .pem extension.
+The aim of this project is to:
 
-### Step 2:
-- Navigate to the EC2 console and identify the instance with your unique UserId.
-- Find the Key pair name under the Details section and save the file in VSCode as KeyPairName.pem.
+- Set up a Kafka client on an EC2 instance
+- Connect the client to an Amazon MSK cluster 
+- Create Kafka topics to capture streaming data
+- Sync the topics with an S3 bucket for storage
 
-## Task 2: Connect to the EC2 instance
-- Follow the Connect instructions (SSH client) on the EC2 console to connect to your EC2 instance.
+## Milestone 3 - Configure EC2 Kafka Client
 
-## Task 3: Set up Kafka on the EC2 instance
-### Step 1:
-- Install Kafka on your client EC2 machine (version 2.12-2.8.1).
+### Tasks 
 
-### Step 2:
-- Install the IAM MSK authentication package on your client EC2 machine.
+1. **Create Pem Key File** 
+    - Retrieve key pair from Parameter Store
+    - Save key pair locally as .pem file
 
-### Step 3:
-- Navigate to the IAM console on your AWS account.
-- In the Roles section, find and copy the ARN of the `<your_UserId>-ec2-access-role`.
-- Edit trust policy, add IAM roles as the Principal type, and replace ARN with the copied ARN.
+2. **Connect to EC2 Instance**
+    - Use SSH client 
+    - Authenticate with .pem key 
 
-### Step 4:
-- Configure your Kafka client to use AWS IAM authentication by modifying the client.properties file.
+3. **Install Kafka**
+    - Install Kafka version 2.12-2.8.1
+    - Install IAM auth package
+    - Configure IAM role for access
+    - Connect Kafka client using IAM
 
-## Task 4: Create Kafka topics
-### Step 1:
-- Retrieve Bootstrap servers string and Plaintext Apache Zookeeper connection string from the MSK Management Console.
+4. **Create Kafka Topics** 
+    - Retrieve MSK connection details
+    - Create `<userId>.pin` topic
+    - Create `<userId>.geo` topic 
+    - Create `<userId>.user` topic
 
-### Step 2:
-- Create the following three topics:
-  - `<your_UserId>.pin` for Pinterest posts data
-  - `<your_UserId>.geo` for post geolocation data
-  - `<your_UserId>.user` for post user data
-- Ensure CLASSPATH is set properly before running Kafka commands.
+## Milestone 4 - Connect MSK to S3
 
-**Note:** You have permission to create topics only with the specified names.
+### Tasks
 
-# License
-This project is licensed under the [MIT License](LICENSE).
+1. **Identify S3 Bucket**
+    - Note user-specific S3 bucket 
+
+2. **Download S3 Connector**
+    - Download Confluent S3 connector
+
+3. **Create MSK Connect**
+    - Create <userId>-plugin  
+    - Create <userId>-connector
+    - Configure connector
