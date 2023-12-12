@@ -71,6 +71,7 @@ Make sure to create topics with correct bootstrap servers and permissions.
 - [AWS MSK Guide](https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html)
 
 
+
 # Batch Processing with MSK Connect
 
 ## Overview
