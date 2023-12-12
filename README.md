@@ -123,3 +123,63 @@ Once built, the connector automatically syncs Kafka data to the S3 bucket.
 
 - [IAM Authentication](https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html)
 
+
+# Batch Processing with Configuring API in API Gateway
+
+## Introduction
+
+This project implements an end-to-end streaming data pipeline by integrating API Gateway, Kafka, and S3 services on AWS.  
+
+Data is ingested via a REST API built in API Gateway. The API passes data to an MSK Kafka cluster using a Kafka REST proxy hosted on EC2. Finally, an MSK Connect connector streams the Kafka data into an S3 bucket for storage and analysis.  
+
+## Overview   
+
+This project builds an end-to-end streaming data pipeline by integrating:  
+
+- API Gateway with Kafka REST proxy
+- MSK Kafka cluster 
+- S3 storage via MSK Connect connector  
+
+**Key Components:**   
+
+- API Gateway with proxy integration 
+- EC2 Kafka client
+- IAM authenticated MSK cluster
+- Custom connector and plugin
+- S3 bucket  
+
+**Learnings:**  
+
+- Implementing streaming data pipelines   
+- Building APIs and Kafka connectors  
+- Moving and processing data across services
+
+## Prerequisites  
+
+
+- API Gateway API  
+- EC2 instance with Kafka    
+- IAM authenticated MSK cluster
+- S3 bucket    
+- Appropriate IAM roles and policies  
+
+## Installation    
+
+**REST Proxy Integration**   
+
+1. Create proxy resource in API Gateway 
+2. Set up ANY method with EC2's Public DNS  
+3. Deploy API and note invoke URL   
+
+**Kafka REST Proxy**    
+
+1. Install Confluent REST proxy package   
+2. Modify properties for IAM authentication
+3. Start proxy on EC2   
+
+**Connector Setup**   
+
+1. Create plugin in MSK Connect  
+2. Build connector using cluster permissions
+3. Configure regex to capture data
+
