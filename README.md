@@ -68,7 +68,57 @@ Make sure to create topics with correct bootstrap servers and permissions.
 
 - [Kafka Documentation](https://kafka.apache.org/documentation/)
 
-- [AWS MSK Guide](https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html)  
+- [AWS MSK Guide](https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html)
+
+
+# Batch Processing with MSK Connect
+
+## Overview
+
+This project creates an MSK Connect connector to sync Kafka cluster data from an IAM authenticated MSK cluster to an S3 bucket, enabling automated ingestion pipelines.
+
+**Key Components:**
+
+- EC2 Kafka client
+- IAM authenticated MSK cluster
+- S3 bucket for storage  
+- Custom connector plugin/connector
+
+**Learnings:**
+
+- MSK Connect architecture
+- Building custom plugins and connectors
+- Kafka to S3 stream ingestion pipelines  
+
+## Prerequisites
+
+- EC2 instance with Kafka client
+- IAM authenticated MSK cluster 
+- S3 bucket with appropriate permissions 
+- IAM roles for access
+
+## Connector Setup 
+
+**Plugin Configuration**
+
+1. Identify S3 bucket name
+2. Download Confluent connector 
+3. Build `<user_id>-plugin` plugin in MSK Connect
+
+**Connector Configuration**  
+
+1. Name connector `<user_id>-connector`
+2. Point to correct S3 bucket  
+3. Set `topics.regex` to `<user_id>.*` 
+4. Choose IAM role for access  
+
+Once built, the connector automatically syncs Kafka data to the S3 bucket.
+
+## Additional Resources
+
+- MSK Connect Guide
+- IAM Permissions
+- S3 Bucket for Storage
 
 - [IAM Authentication](https://docs.aws.amazon.com/msk/latest/developerguide/iam-access-control.html)
 
