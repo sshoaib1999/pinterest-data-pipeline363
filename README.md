@@ -281,7 +281,7 @@ spark-submit --class com.data.AnalyticsRunner target/data-analytics-1.0.jar
 Sample queries can also be run using Spark SQL or dataframes in Spark shell.
 
 
-# Milestone 8: Batch Processing - AWS MWAA
+# Batch Processing - AWS MWAA
 
 ## Introduction
 
@@ -311,7 +311,7 @@ The usage steps were:
 This checks that the Airflow connection to Databricks and scheduling works correctly.
 
 
-# Milestone 9: Stream Processing with AWS Kinesis
+# Stream Processing with AWS Kinesis
 
 ## Introduction
 
