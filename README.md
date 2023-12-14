@@ -175,7 +175,45 @@ This project builds an end-to-end streaming data pipeline by integrating:
 
 1. Install Confluent REST proxy package   
 2. Modify properties for IAM authentication
-3. Start proxy on EC2   
+3. Start proxy on EC2
+
+# Batch Processing with Databricks
+
+## Introduction
+
+Databricks allows for large-scale data processing by integrating with data storage services like AWS S3. This project covers the end-to-end setup of using Databricks for batch data processing on AWS.  
+
+## Table of Contents  
+
+- [Project Description](#project-description)
+- [Installation](#installation)
+- [Usage](#usage)   
+
+## Project Description  
+
+This project sets up a Databricks account to process batch data from an S3 bucket. The aim is to learn how to integrate Databricks with AWS S3 for large scale data processing.   
+
+Key learning includes:   
+
+- Setting up a Databricks account
+- Mounting an S3 bucket to Databricks    
+- Reading batch data files from S3 into Databricks as DataFrames  
+
+## Installation    
+
+Provide instructions for setting up and configuring the project:  
+
+- Sign up for a Databricks account  
+- Mount S3 bucket to Databricks      
+- Create IAM roles for access between the accounts  
+
+## Usage   
+
+Instructions for using the project:   
+
+- Read in batch data from S3 bucket    
+- Process data into DataFrames  
+- Run analysis on DataFrames
 
 **Connector Setup**   
 
