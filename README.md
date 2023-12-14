@@ -222,7 +222,7 @@ Instructions for using the project:
 3. Configure regex to capture data
 
 
-# Pinterest Analytics with Spark
+# Batch Processing with Spark on Databricks
 
 ## Table of Contents
 ---------------------
