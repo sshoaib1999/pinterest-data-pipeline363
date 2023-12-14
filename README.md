@@ -221,3 +221,59 @@ Instructions for using the project:
 2. Build connector using cluster permissions
 3. Configure regex to capture data
 
+
+**Pinterest Analytics with Spark**
+
+**Table of Contents**
+---------------------
+
+* [Introduction](#introduction)
+* [About](#about)  
+* [Getting Started](#getting-started)
+* [Usage](#usage)
+
+## Introduction
+
+Pinterest is a visual discovery engine that allows people to find ideas and inspiration for their lives. As one of the world's largest personalized recommendation platforms, Pinterest has a wealth of data on how people use the platform and what inspires them.  
+
+This project aims to analyze Pinterest data to find interesting insights into user behavior, content consumption patterns, trends and demographics.
+
+## About 
+
+This project performs batch analytics on Pinterest data to uncover insights. It utilizes Apache Spark and Databricks to process and analyze data at scale.  
+
+The aim is to learn Spark SQL, performing data aggregation, and uncovering insights from multiple large datasets.
+
+## Getting Started
+
+These instructions will help you get the project setup and running on your local machine.
+
+### Prerequisites
+
+* Spark 3.0+
+* Java 8+ 
+* Scala 2.12+
+
+### Installation
+
+1. Clone the repo
+
+    ```
+    git clone https://github.com/user/pinterest-analytics.git
+    ```
+
+2. Build using Maven
+
+    ```
+    mvn clean install
+    ```
+
+3. Add Spark dependencies
+
+## Usage  
+
+The main analytics workflows can be run using:
+
+spark-submit --class com.data.AnalyticsRunner target/data-analytics-1.0.jar
+
+Sample queries can also be run using Spark SQL or dataframes in Spark shell.
