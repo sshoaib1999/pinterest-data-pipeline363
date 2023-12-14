@@ -279,3 +279,33 @@ spark-submit --class com.data.AnalyticsRunner target/data-analytics-1.0.jar
 ```
 
 Sample queries can also be run using Spark SQL or dataframes in Spark shell.
+
+
+# Milestone 8: Batch Processing - AWS MWAA
+
+## Introduction
+
+This project sets up an Airflow DAG on AWS MWAA to trigger a Databricks notebook to run on a daily schedule.
+
+## Description  
+
+An MWAA environment called `Databricks-Airflow-env` was already created with access to the S3 bucket `mwaa-dags-bucket`.
+
+An Airflow DAG `<your_UserId_dag.py>` was created that triggers a Databricks notebook when run. This DAG file was uploaded to the `dags` folder in the `mwaa-dags-bucket` S3 bucket.   
+
+The DAG was named `<your_UserId_dag>` in the DAG file to avoid permission errors. It was scheduled to run daily.  
+
+## Installation
+
+No installation steps were required as the MWAA environment and S3 bucket were already provisioned.
+
+Uploading the DAG file only required granting AWS account permissions to write to `mwaa-dags-bucket`.
+
+## Usage  
+
+The usage steps were:
+
+1. Manually trigger the uploaded DAG `<your_UserId_dag>`
+2. Verify the DAG runs successfully and triggers the Databricks notebook
+
+This checks that the Airflow connection to Databricks and scheduling works correctly.
