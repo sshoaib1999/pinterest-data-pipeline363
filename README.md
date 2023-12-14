@@ -309,3 +309,75 @@ The usage steps were:
 2. Verify the DAG runs successfully and triggers the Databricks notebook
 
 This checks that the Airflow connection to Databricks and scheduling works correctly.
+
+
+# Milestone 9: Stream Processing with AWS Kinesis
+
+## Introduction
+
+This project aims to ingest real-time stream data from Pinterest using AWS Kinesis. The data streams will be processed in Databricks and loaded into Delta tables for analytics. Using streaming architectures allows reacting to data in real-time vs batch processing.
+
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation) 
+- [Usage](#usage)
+- [Tasks](#tasks)
+- [License](#license)
+
+## Description
+
+This project processes real-time data streams using AWS Kinesis and saves them to Delta tables in Databricks. The aim is to ingest streaming data from three Pinterest tables (pin, geo, user) for analytics.  
+
+Key things learned:
+
+- Create Kinesis data streams  
+- Configure API for Kinesis integration
+- Send data to streams from Python
+- Read stream data in Databricks
+- Transform and write stream data to Delta tables  
+
+## Installation  
+
+To use this project, you will need:
+
+- AWS account with access to Kinesis and IAM  
+- Databricks workspace
+- Python
+
+## Usage
+
+To process streaming data:
+
+1. Create Kinesis streams  
+2. Configure API credentials
+3. Run user_posting_emulation_streaming.py to send data  
+4. Read streams in Databricks and write to Delta tables
+
+## Tasks   
+
+Details of key tasks completed in this project.  
+
+### Task 1
+
+Created Kinesis streams:  
+
+- streaming-<your_UserId>-pin
+- streaming-<your_UserId>-geo
+- streaming-<your_UserId>-user
+
+### Task 2   
+
+Configured REST API with <your_UserId>-kinesis-access-role> IAM role. API can now invoke Kinesis actions.  
+
+### Task 3  
+
+Created user_posting_emulation_streaming.py to send Pinterest table data to streams.  
+
+### Task 4  
+
+Read stream data in Databricks and loaded into Delta tables.   
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
