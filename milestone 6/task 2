@@ -29,3 +29,13 @@ MOUNT_NAME = "/mnt/Pinterest Data Engineering Project"
 SOURCE_URL = "s3n://{0}:{1}@{2}".format(ACCESS_KEY, ENCODED_SECRET_KEY, AWS_S3_BUCKET)
 # Mount the drive
 dbutils.fs.mount(SOURCE_URL, MOUNT_NAME)
+
+# Paths to JSON files
+pin_path = MOUNT_NAME + "/topics/<0e09f2683831>.pin/partition=0/*.json"  
+geo_path = MOUNT_NAME + "/topics/<0e09f2683831>.geo/partition=0/*.json"
+user_path = MOUNT_NAME + "/topics/<0e09f2683831>.users/partition=0/*.json"
+
+# Read JSON files into DataFrames
+df_pin = spark.read.json(pin_path)
+df_geo = spark.read.json(geo_path) 
+df_user = spark.read.json(user_path)
