@@ -274,6 +274,8 @@ These instructions will help you get the project setup and running on your local
 
 The main analytics workflows can be run using:
 
+```
 spark-submit --class com.data.AnalyticsRunner target/data-analytics-1.0.jar
+```
 
 Sample queries can also be run using Spark SQL or dataframes in Spark shell.
