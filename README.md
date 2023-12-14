@@ -222,9 +222,9 @@ Instructions for using the project:
 3. Configure regex to capture data
 
 
-**Pinterest Analytics with Spark**
+##Pinterest Analytics with Spark
 
-**Table of Contents**
+##Table of Contents
 ---------------------
 
 * [Introduction](#introduction)
